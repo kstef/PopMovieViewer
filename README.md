@@ -10,7 +10,7 @@ Download project files.
 
 If you havent allready installed Angular CLI please run `npm install -g @angular/cli`. More information on Angular CLI can be found at `https://cli.angular.io/`
 
-Run cmd `npm istall` from project folder
+Run `npm istall` from project folder
 
 Run `ng serve`. Navigate to `http://localhost:4200/`. 
 
