@@ -1,0 +1,23 @@
+mat-list-item {
+    cursor: pointer;
+    height: 40px !important;
+}
+
+mat-list-item:hover {
+    background: #E0E0E0;
+}
+
+.selected {
+    background: #26A69A;
+    color: #EEE
+}
+
+mat-list.md-make-scrollable {
+    max-height: calc(100vh - 170px);
+    overflow-y: auto;
+}
+
+mat-list.sm-make-scrollable {
+    max-height: 300px;
+    overflow-y: auto;
+}

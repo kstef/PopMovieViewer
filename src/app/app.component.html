@@ -1,0 +1,14 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<app-header></app-header>
+
+<div *ngIf="!(loading | async); else loading_content" fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="center stretch">
+    <app-movies-list fxFlexOrder.lt-md="2" fxFlex="30"></app-movies-list>
+    <app-movie-view fxFlexOrder.lt-md="1" fxFlex></app-movie-view>
+</div>
+<ng-template #loading_content>
+    <mat-progress-spinner class="loading-spinner" color="primary" mode="indeterminate">
+    </mat-progress-spinner>
+</ng-template>
+
+<app-footer></app-footer>
+<ng2-toasty></ng2-toasty>

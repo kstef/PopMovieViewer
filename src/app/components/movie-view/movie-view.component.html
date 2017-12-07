@@ -1,0 +1,38 @@
+<mat-card *ngIf="selectedMovie$ | async as movie">
+    <mat-card-title>
+        <h1>{{ movie.title }}</h1>
+    </mat-card-title>
+    <mat-card-content>
+        <div fxLayout="column" fxLayoutAlign="space-around stretch">
+            <div fxFlex>
+                <div fxLayout="row">
+                    <div fxFlex="35">
+                        <img mat-card-image [src]="movie.poster_path" />
+                    </div>
+                    <div fxFlex fxLayout="column" fxFlexAlign="end">
+                        <div fxFlex fxLayout="row" fxLayoutAlign="start center">
+                            <div fxFlexAlign="center">
+                                <h3>Rating: </h3>
+                            </div>
+                            <div fxFlexAlign="center">
+                                <star-rating-comp [starType]="'svg'" [staticColor]="'ok'" [showHalfStars]="true" [step]="0.1" [numOfStars]="5" [readOnly]="true" [size]="'medium'" [rating]="movie.vote_average"></star-rating-comp>
+                            </div>
+                        </div>
+                        <div fxFlex fxFlexAlign="start">
+                            <div fxLayoutAlign="end">
+                                <h4>Release date: {{ movie.release_date | date: 'dd/MM/yyyy'}}</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div fxFlex>
+                <h2>Synopsis</h2>
+            </div>
+            <div fxFlex>
+                <p>{{ movie.overview }}</p>
+            </div>
+        </div>
+
+    </mat-card-content>
+</mat-card>

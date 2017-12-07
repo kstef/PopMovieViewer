@@ -1,0 +1,16 @@
+<mat-card>
+    <mat-card-title> Most popular movies</mat-card-title>
+    <mat-card-content>
+        <mat-list class="md-make-scrollable" [ngClass.lt-md]="{'md-make-scrollable':false, 'sm-make-scrollable':true}">
+            <mat-list-item *ngFor="let movie of movies$ | async" [ngClass]="{'selected': (selectedMovie$ | async) && (selectedMovie$ | async).id == movie.id}" (click)="showMovie(movie)">
+
+                <span matLine> {{movie.title}} </span>
+
+                <button *ngIf="(selectedMovie$ | async) && (selectedMovie$ | async).id == movie.id" mat-icon-button>
+                            <mat-icon>play_arrow</mat-icon>
+                </button>
+
+            </mat-list-item>
+        </mat-list>
+    </mat-card-content>
+</mat-card>

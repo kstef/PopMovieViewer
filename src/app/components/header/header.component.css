@@ -1,0 +1,12 @@
+.example-fill-remaining-space {
+    flex: 1 1 auto;
+}
+
+.subtitle {
+    font-size: 70%;
+}
+
+mat-toolbar {
+    color: #EEE;
+    background: #009688;
+}
