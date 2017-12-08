@@ -8,7 +8,7 @@ const YOUTUBE = 'YouTube';
 
 function getNewMovie(movie: IMovie): IMovie {
     let newMovie = { ...movie };
-    newMovie.poster_path = `http://image.tmdb.org/t/p/w300/${movie.poster_path}`;
+    newMovie.poster_path = `https://image.tmdb.org/t/p/w300/${movie.poster_path}`;
     newMovie.vote_average = movie.vote_average / 2;
     return newMovie;
 }
@@ -21,7 +21,7 @@ function getMovieVideo(videos: IVideo[]): string {
     if (video) {
         switch (video.site) {
             //http://www.youtube.com/embed/okqEVeNqBhc?html5=1
-            case YOUTUBE :  return ` http://www.youtube.com/embed/${video.key}?html5=1`
+            case YOUTUBE :  return ` https://www.youtube.com/embed/${video.key}?html5=1`
             default: break;
         }
     }
