@@ -1,3 +1,5 @@
+import { IVideo } from './../models/video';
+import { IMovie } from './../models/movie';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { Action } from '@ngrx/store';
@@ -22,10 +24,21 @@ export class MoviesEffects {
   GetMovies$: Observable<Action> = this.actions$.
     ofType<moviesActions.GetMovies>(moviesActions.GET_MOVIES)
     .switchMap(action =>
-        this.moviesSvc.getMovies().map((movies: any) => {
+        this.moviesSvc.getMovies().map((movies: IMovie[]) => {
             //console.log(movies);
              return new moviesActions.GotMovies(movies);
             })
         .catch((err) =>  of(new moviesActions.ErrorMovie(err.message || err.toString()))) 
     );
+
+    @Effect()
+    GetVideo$: Observable<Action> = this.actions$.
+      ofType<moviesActions.GetVideo>(moviesActions.GET_VIDEO)
+      .switchMap(action =>
+          this.moviesSvc.getMovieVideos(action.payload).map((videos: IVideo[]) => {
+                console.log(videos);
+               return new moviesActions.GetVideosSuccess(videos);
+              })
+          .catch((err) =>  of(new moviesActions.ErrorMovie(err.message || err.toString()))) 
+      );
 }

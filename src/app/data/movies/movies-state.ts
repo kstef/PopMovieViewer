@@ -6,6 +6,7 @@ export interface IMoviesState{
     errorMsg: string;
     popMovies: IMovie[];
     activeMovie: IMovie;
+    activeMovieVideo: string;
 }
 
 export const DEFAULT_APP_STATE : IMoviesState = {
@@ -13,5 +14,6 @@ export const DEFAULT_APP_STATE : IMoviesState = {
     error:false,
     errorMsg: '',
     popMovies: [],
-    activeMovie: null
+    activeMovie: null,
+    activeMovieVideo: ''
 }

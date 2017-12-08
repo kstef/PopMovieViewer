@@ -1,4 +1,4 @@
-<mat-card *ngIf="selectedMovie$ | async as movie">
+<mat-card *ngIf="movie">
     <mat-card-title>
         <h1>{{ movie.title }}</h1>
     </mat-card-title>
@@ -31,6 +31,14 @@
             </div>
             <div fxFlex>
                 <p>{{ movie.overview }}</p>
+            </div>
+            <div *ngIf="videoURL$ | async as video" fxLayout="column">
+                <div fxFlex>
+                    <h2>Trailer</h2>
+                </div>
+                <div fxFlex>
+                    <app-movie-trailer [video_url]="video" [videoWidth]="300" [videoHeight]="300"></app-movie-trailer>
+                </div>
             </div>
         </div>
 

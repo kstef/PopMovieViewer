@@ -20,6 +20,7 @@ import { StarRatingModule } from 'angular-star-rating';
 import { MoviesEffects } from './data/movies/movies-effects';
 import { MoviesService } from './services/movies.service';
 import { reducers } from './data/reducers';
+import { MovieTrailerComponent } from './components/movie-trailer/movie-trailer.component';
 
 
 
@@ -30,6 +31,7 @@ import { reducers } from './data/reducers';
     FooterComponent,
     MovieViewComponent,
     MoviesListComponent,
+    MovieTrailerComponent,
   ],
   imports: [
     BrowserModule,
